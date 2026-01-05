@@ -3,17 +3,17 @@ class Solution:
         ans = 0
         n = len(matrix)
         count = 0
-        arr = []
+        minv = abs(matrix[0][0])
         for i in range(n):
             for j in range(n):
-                ans += matrix[i][j]
                 if matrix[i][j]<0:
                     count +=1
-                arr.append(abs(matrix[i][j]))
+                minv = min(minv ,abs(matrix[i][j]) )
+                ans += abs(matrix[i][j])
+
 
         count = count%2
-        arr.sort()
-        # print(arr)
-        # print(count)
-        ans = sum(arr[count:])-sum(arr[:count])
+        if count:
+            ans = ans - minv -minv 
+            
         return ans
