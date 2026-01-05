@@ -12,8 +12,8 @@ class Solution:
                 ans += abs(matrix[i][j])
 
 
-        count = count%2
-        if count:
+        
+        if count&1 :
             ans = ans - minv -minv 
-            
+
         return ans
