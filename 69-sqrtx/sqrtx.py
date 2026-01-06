@@ -1,6 +1,6 @@
 class Solution:
     def mySqrt(self, x: int) -> int:
-        l, r = 0, x
+        l, r = 0, x//2 + 1
         ans = -1
         while l <= r:
             m = (l+r)//2
