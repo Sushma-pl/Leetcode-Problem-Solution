@@ -7,11 +7,12 @@ class Solution:
             
             return ans
         
-        l, r = 1, 10**6
+        l, r = 1, max(nums)
         while l <= r:
             m = (l+r)//2
 
 # we want this case but ans should be as less as possible, since solve(d) < threshold which mean we can increase solve(d) which mean we should decrease the divisor/ans
+# TC: O(log(10**6) * len(nums))
             if solve(m) <= threshold:
                 ans = m
                 r = m-1
